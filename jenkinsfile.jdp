@@ -1,0 +1,22 @@
+pipeline {
+    agent
+    stages{
+        stage ("pull") {
+            steps{
+                git branch: 'main', url: 'https://github.com/komaljadhav116/kubernetes-b21.git'
+            }
+        }
+        stage ("build") {
+            steps{
+                sh 'echo "build succeccc"'
+
+            }
+        }
+        stage ("deploy") {
+            steps{
+                sh 'echo "deploy succeccc"'
+
+            }
+        }
+    }
+}
