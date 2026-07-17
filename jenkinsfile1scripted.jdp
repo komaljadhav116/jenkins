@@ -1,0 +1,11 @@
+node ('node-1') {
+    stage('pull') {
+        git branch: 'main', url: 'https://github.com/komaljadhav116/Jenkins-ci-cd-.git'
+    }
+    stage('build') {
+        sh 'echo "build succeccc"'
+    }
+    stage('Deploy') {
+        sh 'echo "build succeccc"'
+    }
+}
