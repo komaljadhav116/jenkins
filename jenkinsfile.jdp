@@ -12,7 +12,7 @@ pipeline {
     stages{
         stage("Check Parameter") {
             steps {
-                echo "Deploy value: ${params.deploy}"
+                echo "build value: ${params.build}"
             }
         }
         stage ("pull") {
