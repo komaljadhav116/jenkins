@@ -16,6 +16,15 @@ pipeline {
                 git branch: 'main', url: 'https://github.com/komaljadhav116/CDEC-studentapp.git'
             }
         }
+        stage("Install Java 17") {
+            steps {
+                sh '''
+                    sudo apt update
+                    sudo apt install openjdk-17-jdk -y
+                    java -version
+                '''
+            }
+        }
         stage ("build") {
             steps{
                 sh '''
