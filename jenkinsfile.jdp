@@ -2,6 +2,9 @@ pipeline {
     agent {
         label 'node-1'
     }
+    tools {
+        maven 'Maven'
+    }
     stages{
         stage("Check Parameter") {
             steps {
