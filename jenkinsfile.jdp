@@ -5,7 +5,7 @@ pipeline {
     stages{
         stage("Check Parameter") {
             steps {
-                echo "Deploy value: ${params.DEPLOY}"
+                echo "Deploy value: ${params.deploy}"
             }
         }
         stage ("pull") {
