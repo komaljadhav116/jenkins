@@ -10,12 +10,15 @@ pipeline {
         }
         stage ("pull") {
             steps{
-                git branch: 'main', url: 'https://github.com/komaljadhav116/kubernetes-b21.git'
+                git branch: 'main', url: 'https://github.com/komaljadhav116/CDEC-studentapp.git'
             }
         }
         stage ("build") {
             steps{
-                sh 'echo "build succeccc"'
+                sh '''
+                   cd backend
+                   mvn clean package 
+                   '''
 
             }
         }
