@@ -30,12 +30,12 @@ pipeline {
             }
         }
         stage ("build") {
-            steps{
-                when {
-                    expression {
+            when {
+                expression {
                     params.build == true
-                    }
                 }
+            }
+            steps{
                 sh '''
                    cd backend
                    mvn clean package -DskipTests
