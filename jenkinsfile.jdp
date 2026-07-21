@@ -3,6 +3,11 @@ pipeline {
         label 'node-1'
     }
     stages{
+        stage("Check Parameter") {
+            steps {
+                echo "Deploy value: ${params.DEPLOY}"
+            }
+        }
         stage ("pull") {
             steps{
                 git branch: 'main', url: 'https://github.com/komaljadhav116/kubernetes-b21.git'
