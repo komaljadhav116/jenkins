@@ -32,7 +32,7 @@ pipeline {
         stage ("build") {
             when {
                 expression {
-                    params.build == true
+                    params.build == false
                 }
             }
             steps{
