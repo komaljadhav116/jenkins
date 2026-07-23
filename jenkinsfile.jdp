@@ -54,6 +54,14 @@ pipeline {
                 
             }
         }
+        stage ('quality test'){
+            steps {
+                timeout(time: 2, unit: 'NANOSECONDS') {
+                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar-token'
+                }
+                
+            }
+        }
         stage ("deploy") {
             steps{
                 sh 'echo "deploy succeccc"'
