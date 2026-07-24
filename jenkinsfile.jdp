@@ -57,7 +57,7 @@ pipeline {
         stage ('quality test'){
             steps {
                 timeout(1) {
-                     waitForQualityGate abortPipeline: false, credentialsId: 'sonar'
+                     waitForQualityGate abortPipeline: true, credentialsId: 'sonar'
                 }
                 
             }
