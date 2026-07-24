@@ -62,6 +62,11 @@ pipeline {
                 
             }
         }
+        // stage ('S3-upload') {
+        //     steps {
+        //         sh 'aws s3 cp backend/target/student-registration-backend-0.0.1-SNAPSHOT.jar s3://jenkins-cdec-b3/student.jar'
+        //     }
+        // }
         stage ("deploy") {
             steps{
                 sh 'echo "deploy succeccc"'
