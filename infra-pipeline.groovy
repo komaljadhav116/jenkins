@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('pull') {
             steps {
-                git branch: 'main', url: 'https://github.com/komaljadhav116/Terraform-Notes.git'
+                git branch: 'main', credentialsId: 'github-cred', url: 'https://github.com/komaljadhav116/Terraform-Notes.git'
             }
         }
         stage ('Plan') {
