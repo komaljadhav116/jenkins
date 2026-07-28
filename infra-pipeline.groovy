@@ -24,12 +24,16 @@ pipeline {
         }
         stage ('Apply') {
             steps {
-                sh '''terraform apply --auto-approve'''
+                sh '''
+                      cd eks-cluster-tf
+                      terraform apply --auto-approve'''
             }
         }
         stage ('destroy') {
             steps {
-                sh '''terraform destroy --auto-approve'''
+                sh '''
+                      cd eks-cluster-tf
+                      terraform destroy --auto-approve'''
             }
         }
     }
