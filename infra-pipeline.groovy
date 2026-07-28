@@ -1,5 +1,12 @@
 pipeline {
     agent any
+    parameters {
+        choice(
+            name: 'action',
+            choices: ['apply', 'destroy'],
+            description: 'Select the Terraform action what to perform apply or destroy'
+        )
+    }
     stages {
         stage ('pull') {
             steps {
@@ -23,6 +30,9 @@ pipeline {
             }
         }
         stage ('Apply') {
+            when {
+                expression { params.action == 'apply' }
+            }
             steps {
                 sh '''
                       cd eks-cluster-tf
@@ -30,6 +40,9 @@ pipeline {
             }
         }
         stage ('destroy') {
+            when {
+                expression { params.action == 'destroy' }
+            }
             steps {
                 sh '''
                       cd eks-cluster-tf
