@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage ('PULL') {
             steps {
-                git branch: 'test', url: 'https://github.com/jambhulkarcloudblitz-alt/CDEC-studentapp.git'
+                git branch: 'main', url: 'https://github.com/komaljadhav116/CDEC-studentapp.git'
         }
         }
         stage ('FRONTEND-DOCKER-IMAGE-BUILD'){
