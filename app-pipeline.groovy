@@ -21,7 +21,7 @@ pipeline {
         stage ('PUSH-FRONTEND-BACKEND-IMAGE') {
             steps {
                 // This step should not normally be used in your script. Consult the inline help for details.
-                  withDockerRegistry(credentialsId: 'docker-cred', url: 'https://hub.docker.com/repositories/komal0116') {
+                  withDockerRegistry(credentialsId: 'docker-cred', url: 'https://index.docker.io/v1/') {
                  sh '''docker push komal0116/3-tier-docker:frontendjenkinsdocker
                         docker push komal0116/3-tier-docker:backendjenkinsdocker'''
                }
